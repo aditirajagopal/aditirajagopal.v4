@@ -5,7 +5,7 @@ import TagsIcon from 'react-icons/lib/fa/tags';
 
 import Link from '../components/Link';
 
-import '../css/tags.css';
+import '../styles/main.scss';
 
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext;

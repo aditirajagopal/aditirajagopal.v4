@@ -3,18 +3,26 @@ const { name } = require('./package.json');
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : `/`,
   siteMetadata: {
-    author: 'You!',
-    title: `Gatsby Default (Blog) Starter`,
+    author: 'Aditi Rajagopal',
+    title: `Aditi Rajagopal - Website/Portfolio/Blog`,
   },
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/src/images/`
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -30,6 +38,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp'
   ],
 }
