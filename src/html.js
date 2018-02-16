@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './styles/main.scss'
-
 const BUILD_TIME = new Date().getTime();
 
 export default class HTML extends React.Component {
@@ -11,6 +9,17 @@ export default class HTML extends React.Component {
   };
 
   render() {
+    let css;
+    if (process.env.NODE_ENV === 'production') {
+      css = (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: require('!raw!../public/styles.css'),
+          }}
+        />
+      );
+    }
+
     return (
       <html lang="en">
         <head>
@@ -21,6 +30,7 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
+          {css}
         </head>
         <body>
           <div
