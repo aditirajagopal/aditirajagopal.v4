@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import ProfileBar from '../components/ProfileBar';
 import Link from '../components/Link';
 
-import '../styles/index.css';
+import '../styles/index.scss';
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;

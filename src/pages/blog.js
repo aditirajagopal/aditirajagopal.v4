@@ -6,14 +6,25 @@ import Footer from '../components/Footer';
 import Link from '../components/Link';
 import Header from '../components/Header';
 
-import '../styles/index.css';
+import '../styles/index.scss';
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
-    <div className="blog-posts">
-    <h1>Blog Posts</h1>
-    <p> it's ugly. i know</p>
+    <article>
+      <header className="bg-gold sans-serif">
+        <div className="mw9 center pa4 pt5-ns ph7-l">
+          <time className="f6 mb2 dib ttu tracked"><small>Lists, plot twists, and sometimes interesting thoughts</small></time>
+          <h3 className="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+            <span className="bg-black-90 lh-copy white pa1 tracked-tight">
+              Blog
+            </span>
+          </h3>
+          <h4 className="f3 fw1 georgia i">Do people still call these blogs?</h4>
+          <h5 className="f6 ttu tracked black-80">By Aditi Rajagopal</h5>
+        </div>
+      </header>
+      <div className="pa4 ph7-l georgia mw9-l center">
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
@@ -36,8 +47,10 @@ export default function Index({ data }) {
             </article>
           );
         })}
+      </div>
     <Footer/>
-    </div>
+
+    </article>
   );
 }
 
