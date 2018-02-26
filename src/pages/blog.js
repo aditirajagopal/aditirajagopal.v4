@@ -12,7 +12,7 @@ export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <article>
-      <header className="bg-gold sans-serif">
+      <header className="bg-gradient sans-serif">
         <div className="mw9 center pa4 pt5-ns ph7-l">
           <time className="f6 mb2 dib ttu tracked"><small>Lists, plot twists, and sometimes interesting thoughts</small></time>
           <h3 className="f2 f1-m f-headline-l measure-narrow lh-title mv0">
@@ -24,22 +24,24 @@ export default function Index({ data }) {
           <h5 className="f6 ttu tracked black-80">By Aditi Rajagopal</h5>
         </div>
       </header>
-      <div className="pa4 ph7-l georgia mw9-l center">
+      <div className="pa4 ph7-l mw9-l center">
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <article class="center mw5 mw6-ns hidden ba mv4">
-              <h1 class="f4 bg-near-black white mv0 pv2 ph3">
+            <article className="center mw5 mw6-ns hidden ba mv4">
+              <h1 className="f4 bg-near-black white mv0 pv2 ph3">
                 <GatsbyLink to={post.frontmatter.path}>
                   {post.frontmatter.title}
                 </GatsbyLink>
+                <time className="f6 mb2 dib ttu tracked fr">
+                  <small>
+                    {post.frontmatter.date}
+                  </small>
+                </time>
               </h1>
-              <div class="pa3 bt">
-                <h2 className="date">
-                  {post.frontmatter.date}
-                </h2>
-                <p class="f6 f5-ns lh-copy measure mv0">
+              <div className="pa3 bt">
+                <p className="f6 f5-ns lh-copy measure mv0">
                     {post.excerpt}
                   <Link to={post.frontmatter.path}>Read more</Link>
                 </p>

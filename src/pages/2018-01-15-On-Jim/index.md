@@ -3,7 +3,7 @@ title: "On Jim"
 date: "2018-01-15T13:50:13.234Z"
 path: "/on-jim"
 description: "The written version of my eulogy"
-tags: ["jim", "ibm", "whatsthegoal"]
+category: ["jim", "ibm", "whatsthegoal"]
 ---
 
 <img src ="https://cache.legacy.net/legacy/images/Cobrands/PostBulletin/Photos/210271_20180113.jpg">

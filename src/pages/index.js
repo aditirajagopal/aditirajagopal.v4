@@ -33,12 +33,12 @@ export const pageQuery = graphql`
         }
       }
     }
-    imageOne: imageSharp(id: { regex: "/profile.jpg/" }) {
+    imageOne: imageSharp(id: { regex: "/profile/" }) {
       sizes(maxWidth: 630) {
         ...GatsbyImageSharpSizes
       }
     }
-    imageTwo: imageSharp(id: { regex: "/bg_volcano.jpg/" }) {
+    imageTwo: imageSharp(id: { regex: "/bg_volcano/" }) {
       sizes(maxWidth: 630) {
         ...GatsbyImageSharpSizes
       }

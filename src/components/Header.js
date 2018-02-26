@@ -21,6 +21,7 @@ export default function Header(props) {
 
 	      <Fade bottom duration={3000}>
 	        <div className="mt1">
+	          <a href="/about/" title="about" className="f5 dib pr2 mid-gray dim">about</a>
 	          <a href="https://www.linkedin.com/in/aditirajagopal/" title="linkedin" className="f5 dib pr2 mid-gray dim">linkedin</a>
 	          <a href="" title="blog" className="f5 dib pr2 mid-gray dim">portfolio</a>
 	          <a href="https://twitter.com/Aditi_Rajagopal" title="twitter" className="f5 dib pr2 mid-gray dim">tweets</a>

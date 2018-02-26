@@ -20,7 +20,7 @@ export default class Template extends React.Component {
         <Helmet
           title="Aditi Rajagopal  - Website/Portfolio/Blog"
           meta={[
-            { name: 'description', content: 'Sample' },
+            { name: 'description', content: 'Life, musings & miscellaneous thoughts of a Wolverine stuck in Gopherland' },
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
