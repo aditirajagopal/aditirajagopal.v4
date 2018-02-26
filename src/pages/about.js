@@ -38,6 +38,7 @@ export default function About( {data} ) {
 		              <div className="f5 dg pr2">
 								    <a href="#FAQ" className="white-50 dim">FAQ</a>
 								    <a href="#ChangeLog" className="white-50 dim">ChangeLog</a>
+								    <a href="https://docs.google.com/document/d/1mx5aRWc55aebCPUMr0_WPiGliJ8J5Cr3lwj2bCGdGfc/edit?usp=sharing">Resume</a>
 					          <a href="https://www.linkedin.com/in/aditirajagopal/" title="linkedin" className="white-50 dim">linkedin</a>
 					          <a href="https://twitter.com/Aditi_Rajagopal" title="twitter" className="white-50 dim">tweets</a>
 							    </div>
