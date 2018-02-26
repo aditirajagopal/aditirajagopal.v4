@@ -10,7 +10,6 @@ import Link from '../components/Link';
 import '../styles/index.scss';
 
 export default function Index({ data }) {
-  const { edges: posts } = data.allMarkdownRemark;
   return (
     <div>
       <Header headerImage={data.imageTwo.sizes} />
@@ -20,19 +19,6 @@ export default function Index({ data }) {
 
 export const pageQuery = graphql`
   query IndexPageQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
     imageOne: imageSharp(id: { regex: "/profile/" }) {
       sizes(maxWidth: 630) {
         ...GatsbyImageSharpSizes
