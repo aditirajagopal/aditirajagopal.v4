@@ -1,36 +1,28 @@
 import React from 'react';
-import PropTypes from "prop-types"
-import GatsbyLink from 'gatsby-link';
-import Helmet from 'react-helmet';
-import Img from 'gatsby-image'
-
 import Header from '../components/Header';
-import ProfileBar from '../components/ProfileBar';
-import Link from '../components/Link';
-
 import '../styles/index.scss';
 
-
 class Index extends React.Component {
-  constructor() {
-      super()
-      this.state = {
-        headerBg: null,
-      }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerBg: null,
+    };
+  }
   componentWillMount() {
-    this.setState({ headerBg: this.props.data.imageTwo.sizes })
+    this.setState({ headerBg: this.props.data.imageTwo.sizes });
   }
 
   render() {
-    console.log(this.state.headerBg)
-    return(
+    return (
       <div>
         <Header headerImage={this.state.headerBg} />
-      </div>    
-  )}
-
+      </div>
+    );
+  }
 }
+
+export default Index;
 
 export const pageQuery = graphql`
   query IndexPageQuery {
