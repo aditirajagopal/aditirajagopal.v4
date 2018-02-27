@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types"
 import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image'
@@ -9,12 +10,26 @@ import Link from '../components/Link';
 
 import '../styles/index.scss';
 
-export default function Index({ data }) {
-  return (
-    <div>
-      <Header headerImage={data.imageTwo.sizes} />
-    </div>
-  );
+
+class Index extends React.Component {
+  constructor() {
+      super()
+      this.state = {
+        headerBg: null,
+      }
+    }
+  componentWillMount() {
+    this.setState({ headerBg: this.props.data.imageTwo.sizes })
+  }
+
+  render() {
+    console.log(this.state.headerBg)
+    return(
+      <div>
+        <Header headerImage={this.state.headerBg} />
+      </div>    
+  )}
+
 }
 
 export const pageQuery = graphql`
