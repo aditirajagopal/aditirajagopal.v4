@@ -1,4 +1,6 @@
 import React from 'react';
+import Img from "gatsby-image"
+import Fade from 'react-reveal/Fade'
 import Header from '../components/Header';
 import '../styles/index.scss';
 
@@ -10,13 +12,16 @@ class Index extends React.Component {
     };
   }
   componentWillMount() {
-    this.setState({ headerBg: this.props.data.imageTwo.sizes });
+    this.setState({ headerBg: this.props.data.bg.sizes });
   }
 
   render() {
     return (
       <div>
-        <Header headerImage={this.state.headerBg} />
+        <header className="header_bg dt w-100 vh-100 bw5 b--solid b--near-white">
+          <Img className="image_bg z-0" sizes={this.state.headerBg} />
+          <Header />
+        </header>
       </div>
     );
   }
@@ -26,12 +31,7 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexPageQuery {
-    imageOne: imageSharp(id: { regex: "/profile/" }) {
-      sizes(maxWidth: 630) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    imageTwo: imageSharp(id: { regex: "/bg_volcano/" }) {
+    bg: imageSharp(id: { regex: "/bg_volcano/" }) {
       sizes(maxWidth: 630) {
         ...GatsbyImageSharpSizes
       }
