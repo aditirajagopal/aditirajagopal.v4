@@ -8,7 +8,7 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerBg: null,
+      headerBg: this.props.data.bg.sizes,
     };
   }
   componentWillMount() {
